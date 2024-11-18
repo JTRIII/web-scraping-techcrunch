@@ -111,7 +111,8 @@ for page in range(0, 10):
         image = bs4Object.select_one('img.attachment-post-thumbnail')['src'] if bs4Object.select_one('img.attachment-post-thumbnail') else "N/A"
 
         # Check for content
-        content = bs4Object.select_one('.entry-content p').text.strip() if bs4Object.select_one('.entry-content p') else "N/A"
+        content_element = bs4Object.select_one('.entry-content p')
+        content = " ".join([p.text.strip() for p in bs4Object.select('.entry-content p')]) if content_element else "N/A"
         
         print("*******************************")
         print("Title:", title)
