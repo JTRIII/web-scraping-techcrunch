@@ -6,7 +6,7 @@ url = "https://techcrunch.com/category/artificial-intelligence/"
 
 bfDataFrame = pd.DataFrame()
 
-for page in range(0, 2):
+for page in range(0, 10):
     document = requests.get(url)
     mainbs4Object = BeautifulSoup(document.text, 'html.parser')
 
